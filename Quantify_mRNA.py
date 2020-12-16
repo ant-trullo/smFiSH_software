@@ -24,7 +24,7 @@ class Quantify_mRNA:
         spts_red          =  np.load(analysis_folder + '/spts_lbls_b.npy')
         chs_spts_nucs     =  np.fromfile(analysis_folder + '/chs_spts_nucs.bin', 'uint16')
         raw_data          =  RawDataLoader.RawDataLoader(raw_data_fname, chs_spts_nucs)
-        
+
         files  =  listdir(analysis_folder)                   # search in the analysis folder the xls files to read the background values
         for file in files:
             if file[-6:] == "_b.xls":                        # # select the .xls file with spot analysis results, red
@@ -39,7 +39,7 @@ class Quantify_mRNA:
         bkg_list_b   =  sheet_b.col_values(4)[3:]                             # copy background values in a python-list
 
         rgp_red  =  regionprops_table(spts_red, raw_data.spts_b, properties=["label", "intensity_image", "area", "centroid"])    # table of the needed properties of all the spots
-        
+
         clstr_above  =  []                      # list for the properties of all the clustered spots above nucs 
         clstr_below  =  []                      # list for the properties of all the clustered spots below nucs
         sm_above     =  []                      # list for the properties of all the single mol spots above nucs
@@ -65,7 +65,7 @@ class Quantify_mRNA:
                     bkg      =  bkg_list_b[tags_list_b.index(rgp_red["label"][k])]
                     spt_int  =  rgp_red["intensity_image"][k].sum()
                     clstr_below.append([int(rgp_red["label"][k]), int(spt_int), bkg, spt_int - bkg * rgp_red["area"][k], spt_int / bkg, int(rgp_red["area"][k]), int(rgp_red["centroid-0"][k]), int(rgp_red["centroid-1"][k]), int(rgp_red["centroid-2"][k])])
-                   
+
         book    =  xlwt.Workbook(encoding='utf-8')
         sheet1  =  book.add_sheet("Above")
         sheet2  =  book.add_sheet("Below")
@@ -173,3 +173,6 @@ class Quantify_mRNA:
 
         book.save(analysis_folder + "/" + xls_b_name[:-22] + "_mRNA_SM_Clusters" + str(vol_thr) + "_clstrDist_" + str(clstr_dist) + ".xls")
         # book.save('/home/atrullo/Desktop' + "/" + xls_b_name[:-22] + "_mRNA_SM_Clusters" + str(vol_thr) + "_clstrDist_" + str(clstr_dist) + ".xls")
+
+
+
