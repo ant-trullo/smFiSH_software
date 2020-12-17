@@ -24,8 +24,7 @@ This software was developed in Python™ 3.6.
 - Install smFiSH_software:
 
 	Unzip the file smFiSH_software.zip and put all the files and the subfolder in a folder.
-	In order to compile the cython files, open a terminal, or a cmd in case of Windows, move into the folder where .py and .pyx files are and then, one by                
-	one, run the following commands:
+	In order to compile the cython files, open a terminal, or a cmd in case of Windows, move into the folder where .py and .pyx files are and then, one by         one, run the following commands:
 	
 	python3 setup_MNU.py build_ext --inplace
 	
