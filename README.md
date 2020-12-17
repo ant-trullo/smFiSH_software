@@ -35,7 +35,7 @@ This software was developed in Python™ 3.6.
 	
 - Run smFiSH_software:	
 	
-	If the cython files are correctly compiled, open a terminal (cmd) in the folder with the .py, .pyx and the sompiled files and run: 
+	If the cython files are correctly compiled, open a terminal (cmd) in the folder with the .py, .pyx and the compiled files and run: 
 	
 	python3 smFish_GUI_v3_1.py
 	
