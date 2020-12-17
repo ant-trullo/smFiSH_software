@@ -1,4 +1,4 @@
-"""This is the main window of the software to analyze FiSH and smiFiSH.  # 
+"""This is the main window of the software to analyze smFiSH and smiFiSH. 
 This is version 3.1. Since late october 2019
 """
 
