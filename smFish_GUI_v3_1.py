@@ -109,8 +109,8 @@ class MainWindow(QtWidgets.QMainWindow):
         post_processing_menu  =  menubar.addMenu("&PostProcessing")
         post_processing_menu.addAction(coloc_action)
 
-        temporary_menu  =  menubar.addMenu("&Temporary")
-        temporary_menu.addAction(coloc_action)
+#         temporary_menu  =  menubar.addMenu("&Temporary")
+#         temporary_menu.addAction(coloc_action)
 
         busy_lbl  =  QtWidgets.QLabel("Ready")
         busy_lbl.setStyleSheet("color: green")
@@ -690,7 +690,7 @@ class MainWindow(QtWidgets.QMainWindow):
         layout.addWidget(tabs_tot)
         layout.addLayout(bottom_labels_box)
 
-        mycmap  =  np.fromfile("mycmap.bin", "uint16").reshape((10000, 3)) / 255.0
+        mycmap  =  np.fromfile("mycmap.bin", "uint16").reshape((10000, 3))
         self.colors4map  =  []
         for k in range(mycmap.shape[0]):
             self.colors4map.append(mycmap[k, :])
