@@ -40,6 +40,8 @@ This software was developed in Python™ 3.6.
 	python3 smFish_GUI_v3_1.py
 	
 	The graphical user interface will pop up and let you work.
+    	![me](https://github.com/ant-trullo/smFiSH_software/blob/main/smFiSH-software.gif)
+    
     
            
 For any question or issue send an email at:
